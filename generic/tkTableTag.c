@@ -15,7 +15,7 @@
 
 static TableTag *TableTagGetEntry _ANSI_ARGS_((Table *tablePtr, char *name,
 	int objc, char **argv));
-static int	TableTagGetPriority _ANSI_ARGS_((Table *tablePtr,
+static unsigned int	TableTagGetPriority _ANSI_ARGS_((Table *tablePtr,
 	TableTag *tagPtr));
 static void	TableImageProc _ANSI_ARGS_((ClientData clientData, int x,
 	int y, int width, int height, int imageWidth, int imageHeight));
@@ -168,7 +168,7 @@ TableTag *
 TableMergeTag(Table *tablePtr, TableTag *baseTag, TableTag *addTag)
 {
     TableJoinTag *tagPtr = (TableJoinTag *) baseTag;
-    int prio;
+    unsigned int prio;
 
     if (tagPtr == NULL) {
 	/*
@@ -443,10 +443,10 @@ TableTagGetEntry(Table *tablePtr, char *name, int objc, char **argv)
  *
  *----------------------------------------------------------------------
  */
-static int
+static unsigned int
 TableTagGetPriority(Table *tablePtr, TableTag *tagPtr)
 {
-    int prio = 0;
+    unsigned int prio = 0;
     while (tagPtr != tablePtr->tagPrios[prio]) { prio++; }
     return prio;
 }
