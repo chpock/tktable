@@ -246,6 +246,26 @@ Table_EditCmd(ClientData clientData, register Tcl_Interp *interp,
 		TableModifyRC(tablePtr, doRows, flags, tagTblPtr, dimTblPtr,
 			offset, i, i-count, lo, hi, ((i-count) < first));
 	    }
+	    if (!(flags & HOLD_WINS)) {
+		/*
+		 * This may be a little severe, but it does unmap the
+		 * windows that need to be unmapped, and those that should
+		 * stay do remap correctly. [Bug #551325]
+		 */
+		if (doRows) {
+		    EmbWinUnmap(tablePtr,
+			    first - tablePtr->rowOffset,
+			    maxkey - tablePtr->rowOffset,
+			    lo - tablePtr->colOffset,
+			    hi - tablePtr->colOffset);
+		} else {
+		    EmbWinUnmap(tablePtr,
+			    lo - tablePtr->rowOffset,
+			    hi - tablePtr->rowOffset,
+			    first - tablePtr->colOffset,
+			    maxkey - tablePtr->colOffset);
+		}
+	    }
 	} else {
 	    /* (index = i && count = 1) == (index = i && count = -1) */
 	    if (count < 0) {
