@@ -512,6 +512,7 @@ extern int	Table_TagCmd _ANSI_ARGS_((ClientData clientData,
  * HEADERS IN tkTableUtil.c
  */
 
+extern void	Table_ClearHashTable _ANSI_ARGS_((Tcl_HashTable *hashTblPtr));
 extern int	TableOptionBdSet _ANSI_ARGS_((ClientData clientData,
 			Tcl_Interp *interp, Tk_Window tkwin,
 			char *value, char *widgRec, int offset));
