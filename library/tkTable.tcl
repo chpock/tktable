@@ -464,6 +464,8 @@ proc ::tk::table::Motion {w el} {
 # one under the pointer). Must be in numerical form.
 
 proc ::tk::table::BeginExtend {w el} {
+    # avoid tables that have no anchor index yet.
+    if {[catch {$w index anchor}]} { return }
     if {[string match extended [$w cget -selectmode]] &&
 	[$w selection includes anchor]} {
 	::tk::table::Motion $w $el
