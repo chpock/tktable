@@ -485,12 +485,13 @@ TableGetCellValue(Table *tablePtr, int r, int c)
 	    Tcl_BackgroundError(interp);
 	    TableInvalidateAll(tablePtr, 0);
 	} else {
-	    result = Tcl_GetStringResult(interp);
+	    result = (char *) Tcl_GetStringResult(interp);
 	}
 	Tcl_FreeResult(interp);
 	Tcl_DStringFree(&script);
     } else if (tablePtr->arrayVar) {
-	result = Tcl_GetVar2(interp, tablePtr->arrayVar, buf, TCL_GLOBAL_ONLY);
+	result = (char *) Tcl_GetVar2(interp, tablePtr->arrayVar, buf,
+		TCL_GLOBAL_ONLY);
     }
     if (result == NULL)
 	result = "";
