@@ -303,7 +303,7 @@ EmbWinDisplay(Table *tablePtr, Drawable window, TableEmbWindow *ewPtr,
      * If we fall below a specific minimum width/height requirement,
      * we just unmap the window
      */
-    if (width < 4 || height < 4) {
+    if (width < 2 || height < 2) {
 	if (ewPtr->displayed) {
 	    EmbWinUnmapNow(ewTkwin, tkwin);
 	}
