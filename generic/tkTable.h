@@ -6,7 +6,7 @@
  *
  * Copyright (c) 1997-2000 Jeffrey Hobbs
  *
- * See the file "license.terms" for information on usage and redistribution
+ * See the file "license.txt" for information on usage and redistribution
  * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
  *
  * RCS: @(#) $Id$
@@ -581,9 +581,6 @@ extern void	Tcl_DStringAppendAll _ANSI_ARGS_(TCL_VARARGS(Tcl_DString *, arg1));
 EXTERN int Tktable_Init		_ANSI_ARGS_((Tcl_Interp *interp));
 EXTERN int Tktable_SafeInit	_ANSI_ARGS_((Tcl_Interp *interp));
 
-int	TableConfigure _ANSI_ARGS_((Tcl_Interp *interp,
-			Table *tablePtr, int objc, Tcl_Obj *CONST objv[],
-			int flags, int forceUpdate));
 extern void	TableGetActiveBuf _ANSI_ARGS_((register Table *tablePtr));
 extern void	ExpandPercents _ANSI_ARGS_((Table *tablePtr, char *before,
 			int r, int c, char *old, char *new, int index,
@@ -592,10 +589,12 @@ extern void	TableInvalidate _ANSI_ARGS_((Table *tablePtr, int x, int y,
 			int width, int height, int force));
 extern void	TableRefresh _ANSI_ARGS_((register Table *tablePtr,
 			int arg1, int arg2, int mode));
-void	TableGeometryRequest _ANSI_ARGS_((Table *tablePtr));
-void	TableAdjustActive _ANSI_ARGS_((register Table *tablePtr));
-void	TableAdjustParams _ANSI_ARGS_((register Table *tablePtr));
-void	TableConfigCursor _ANSI_ARGS_((register Table *tablePtr));
+extern void	TableGeometryRequest _ANSI_ARGS_((Table *tablePtr));
+extern void	TableAdjustActive _ANSI_ARGS_((register Table *tablePtr));
+extern void	TableAdjustParams _ANSI_ARGS_((register Table *tablePtr));
+extern void	TableConfigCursor _ANSI_ARGS_((register Table *tablePtr));
+extern void	TableAddFlash _ANSI_ARGS_((Table *tablePtr, int row, int col));
+
 
 #define TableInvalidateAll(tablePtr, flags) \
 	TableInvalidate((tablePtr), 0, 0, Tk_Width((tablePtr)->tkwin),\
