@@ -1930,6 +1930,12 @@ TableDisplay(ClientData clientdata)
 		}
 	    }
 
+	    /*
+	     * Don't draw what won't be seen.
+	     * Embedded windows handle this in EmbWinDisplay. 
+	     */
+	    if ((width <= 0) || (height <= 0)) { continue; }
+
 #ifndef WIN32
 	    if (tablePtr->drawMode == DRAW_MODE_SLOW) {
 		/* Correctly adjust x && y with the offset */
@@ -2026,6 +2032,18 @@ TableDisplay(ClientData clientdata)
 	     */
 	    width  -= bd[0] + bd[1] + (2 * padx);
 	    height -= bd[2] + bd[3] + (2 * pady);
+
+	    /*
+	     * Don't draw what won't be seen, based on border constraints.
+	     */
+	    if ((width <= 0) || (height <= 0)) {
+		/*
+		 * Re-Correct the dimensions before border drawing
+		 */
+		width  += bd[0] + bd[1] + (2 * padx);
+		height += bd[2] + bd[3] + (2 * pady);
+		goto DrawBorder;
+	    }
 
 	    /*
 	     * If an image is in the tag, draw it
