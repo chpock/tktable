@@ -1264,11 +1264,10 @@ This command shifts the view in the window left or right according to
 \fIWhat\fR must be either \fBunits\fR or \fBpages\fR or an abbreviation
 of one of these.
 If \fIwhat\fR is \fBunits\fR, the view adjusts left or right by
-\fInumber\fR character units (the width of the \fB0\fR character)
-on the display;  if it is \fBpages\fR then the view adjusts by
-\fInumber\fR screenfuls.
-If \fInumber\fR is negative then characters farther to the left
-become visible;  if it is positive then characters farther to the right
+\fInumber\fR cells on the display; if it is \fBpages\fR then the view
+adjusts by \fInumber\fR screenfuls.
+If \fInumber\fR is negative then cells farther to the left
+become visible;  if it is positive then cells farther to the right
 become visible.
 .RE
 .TP
@@ -1301,7 +1300,7 @@ way through the table, and so on.
 This command adjusts the view in the window up or down according to
 \fInumber\fR and \fIwhat\fR.  \fINumber\fR must be an integer.  \fIWhat\fR
 must be either \fBunits\fR or \fBpages\fR.  If \fIwhat\fR is \fBunits\fR,
-the view adjusts up or down by \fInumber\fR lines; if it is \fBpages\fR then
+the view adjusts up or down by \fInumber\fR cells; if it is \fBpages\fR then
 the view adjusts by \fInumber\fR screenfuls.  If \fInumber\fR is negative
 then earlier elements become visible; if it is positive then later elements
 become visible.
