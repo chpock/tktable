@@ -1160,6 +1160,10 @@ Table_TagCmd(ClientData clientData, register Tcl_Interp *interp,
 	    tagPtr  = (TableTag *) Tcl_GetHashValue(entryPtr);
 	    tagPrio = TableTagGetPriority(tablePtr, tagPtr);
 	    keybuf  = tablePtr->tagPrioNames[tagPrio];
+	    /*
+	     * In the RAISE case, the priority is one higher (-1) because
+	     * we want the named tag to move above the other in priority.
+	     */
 	    if (objc == 5) {
 		tagname  = Tcl_GetString(objv[4]);
 		entryPtr = Tcl_FindHashEntry(tablePtr->tagTable, tagname);
@@ -1180,7 +1184,7 @@ Table_TagCmd(ClientData clientData, register Tcl_Interp *interp,
 		    value = tablePtr->tagPrioSize - 1;
 		} else {
 		    /*
-		     * Raise this tag's priority to the bottom.
+		     * Raise this tag's priority to the top.
 		     */
 		    value = -1;
 		}
