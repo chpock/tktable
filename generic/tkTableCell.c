@@ -857,7 +857,9 @@ TableGetIndex(tablePtr, str, row_p, col_p)
     } else {
     IndexError:
 	Tcl_AppendStringsToObj(Tcl_GetObjResult(tablePtr->interp),
-			       "bad table index \"", str, "\"", (char *)NULL);
+		"bad table index \"", str, "\": must be active, anchor, end, ",
+		"origin, topleft, bottomright, @x,y, or <row>,<col>",
+		(char *)NULL);
 	return TCL_ERROR;
     }
 
