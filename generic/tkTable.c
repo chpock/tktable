@@ -1578,7 +1578,7 @@ TableUndisplay(register Table *tablePtr)
     seen[3] = col;
 }
 
-#ifdef MAC_TCL
+#if defined(MAC_TCL) || (defined(WIN32) && defined(TCL_THREADS))
 #define NO_XSETCLIP
 #endif
 /*
@@ -3786,7 +3786,7 @@ ExpandPercents(tablePtr, before, r, c, old, new, index, dsPtr, cmdType)
 
 /* Function to call on loading the Table module */
 
-#ifdef BUILD_tkTable
+#ifdef BUILD_Tktable
 #   undef TCL_STORAGE_CLASS
 #   define TCL_STORAGE_CLASS DLLEXPORT
 #endif
