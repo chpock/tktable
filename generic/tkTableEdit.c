@@ -593,13 +593,13 @@ TableModifyRC(tablePtr, doRows, flags, tagTblPtr, dimTblPtr,
 	if (doRows /* rows */) {
 	    TableMakeArrayIndex(from, j, buf);
 	    TableMakeArrayIndex(to, j, buf1);
-	    TableSetCellValue(tablePtr, from, j, outOfBounds ? "" :
-		    TableGetCellValue(tablePtr, to, j));
+	    TableMoveCellValue(tablePtr, to, j, buf1, from, j, buf,
+		    outOfBounds);
 	} else {
 	    TableMakeArrayIndex(j, from, buf);
 	    TableMakeArrayIndex(j, to, buf1);
-	    TableSetCellValue(tablePtr, j, from, outOfBounds ? "" :
-		    TableGetCellValue(tablePtr, j, to));
+	    TableMoveCellValue(tablePtr, j, to, buf1, j, from, buf,
+		    outOfBounds);
 	}
 	/*
 	 * If -holdselection is specified, we leave the selected cells in the

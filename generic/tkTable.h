@@ -533,6 +533,10 @@ extern int	TableAtBorder _ANSI_ARGS_((Table *tablePtr, int x, int y,
 extern char *	TableGetCellValue _ANSI_ARGS_((Table *tablePtr, int r, int c));
 extern int	TableSetCellValue _ANSI_ARGS_((Table *tablePtr, int r, int c,
 			char *value));
+extern int    TableMoveCellValue _ANSI_ARGS_((Table *tablePtr,
+			int fromr, int fromc, char *frombuf,
+			int tor, int toc, char *tobuf, int outOfBounds));
+
 extern int	TableGetIcursor _ANSI_ARGS_((Table *tablePtr, char *arg,
 			int *posn));
 #define TableGetIcursorObj(tablePtr, objPtr, posnPtr) \
