@@ -265,6 +265,13 @@ proc ::tk::table::Button1 {w x y} {
     #
     if {$Priv(borderB1) == 1} {
 	set Priv(borderInfo) [$w border mark $x $y]
+	# account for what resizeborders are set [Bug 876320] (ferenc)
+	set rbd [$w cget -resizeborders]
+	if {$rbd == "none" || ![llength $Priv(borderInfo)]
+	    || ($rbd == "col" && [lindex $Priv(borderInfo) 1] == "")
+	    || ($rbd == "row" && [lindex $Priv(borderInfo) 0] == "")} {
+	    set Priv(borderInfo) ""
+	}
     } else {
 	set Priv(borderInfo) ""
     }
