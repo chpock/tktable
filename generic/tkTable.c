@@ -2891,9 +2891,12 @@ TableVarProc(clientData, interp, name, index, flags)
 		if (data) { ckfree(data); }
 	    }
 	    data = (char *) Tcl_GetVar2(interp, name, index, TCL_GLOBAL_ONLY);
-	    if (!data) data = "";
-	    val = (char *)ckalloc(strlen(data)+1);
-	    strcpy(val, data);
+	    if (data && *data != '\0') {
+		val = (char *)ckalloc(strlen(data)+1);
+		strcpy(val, data);
+	    } else {
+		val = NULL;
+	    }
 	    Tcl_SetHashValue(entryPtr, val);
 	}
 	/* convert index to real coords */
