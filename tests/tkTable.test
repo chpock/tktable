@@ -846,6 +846,20 @@ test table-3.132 {TableWidgetCmd procedure, "xview" option} {
     .t yview
 } {0.55 0.65}
 
+test table-4.1 {TableGetCellValue, command with large result} {
+    # test bug 651685
+    proc getcell {rc i} {
+	if {$i == 0} {
+	    return [string repeat $rc 200]
+	}
+    }
+    destroy .t
+    table .t -rows 5 -cols 5 -command {getcell %C %i}
+    pack .t -fill both -expand 1
+    update
+    list
+} {}
+
 eval destroy [winfo children .]
 option clear
 
