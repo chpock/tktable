@@ -442,7 +442,7 @@ return a tag name or null string.  This operates in a similar manner as
 \fB\-coltagcommand\fR, except that it applies to row tags.
 .OP "\-selectioncommand or \-selcmd" selectionCommand SelectionCommand
 Specifies a command to evaluate when the selection is retrieved from a
-table via the selection mechanism (ie: evaluating "\fBselection get\fR").
+table via the selection mechanism (ie: evaluating ``\fBselection get\fR'').
 The return value from this command will become the string passed on by the
 selection mechanism.  It uses the %\-substition model described in COMMAND
 SUBSTITUTION below.  If an error occurs, a Tcl background error is
