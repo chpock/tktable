@@ -253,6 +253,8 @@ Tk_ConfigSpec tableSpecs[] = {
      Tk_Offset(Table, ipadX), 0},
     {TK_CONFIG_PIXELS, "-ipady", "ipadY", "Pad", "0",
      Tk_Offset(Table, ipadY), 0},
+    {TK_CONFIG_JUSTIFY, "-justify", "justify", "Justify", "left",
+     Tk_Offset(Table, defaultTag.justify), 0 },
     {TK_CONFIG_PIXELS, "-maxheight", "maxHeight", "MaxHeight", "600",
      Tk_Offset(Table, maxReqHeight), 0},
     {TK_CONFIG_PIXELS, "-maxwidth", "maxWidth", "MaxWidth", "800",
