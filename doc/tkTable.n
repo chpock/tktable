@@ -547,7 +547,9 @@ the following ways:
 \fInumber,number\fR
 Specifies the cell as a numerical index of row,col which corresponds to the
 index of the associated Tcl array, where \fB\-roworigin,\-colorigin\fR
-corresponds to the first cell in the table (0,0 by default).
+corresponds to the first cell in the table (0,0 by default).  The values
+for row and column will be constrained to actual values in the table,
+which means a valid cell is always found.
 .TP 12
 \fBactive\fR
 Indicates the cell that has the location cursor.
