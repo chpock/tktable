@@ -518,7 +518,6 @@ VALUE:
     return (result?result:"");
 }
 
-extern void	TableAddFlash _ANSI_ARGS_((Table *tablePtr, int row, int col));
 /*
  *----------------------------------------------------------------------
  *
