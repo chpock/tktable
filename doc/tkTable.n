@@ -756,10 +756,10 @@ specified, it uses the table's default relief.
 Stickiness of the window inside the cell, as defined by the \fBgrid\fR command.
 .TP
 \fB\-window \fIpathName\fR
-Specifies the name of a window to display in the  annotation.  It must
-exist before being specified here.
+Specifies the name of a window (widget) to display in the annotation.  It
+must exist before being specified here.  When an empty string is specified,
+if a window was displayed it will cease to be managed by the table widget.
 .RE
-
 
 .SH "THE SELECTION"
 .PP
