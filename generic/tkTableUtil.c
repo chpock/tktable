@@ -74,7 +74,7 @@ TableOptionBdSet(clientData, interp, tkwin, value, widgRec, offset)
     ClientData clientData;		/* Type of struct being set. */
     Tcl_Interp *interp;			/* Used for reporting errors. */
     Tk_Window tkwin;			/* Window containing table widget. */
-    char *value;			/* Value of option. */
+    CONST84 char *value;		/* Value of option. */
     char *widgRec;			/* Pointer to record for item. */
     int offset;				/* Offset into item. */
 {
@@ -302,7 +302,7 @@ TableTagConfigureBd(Table *tablePtr, TableTag *tagPtr,
 
 int
 Cmd_OptionSet(ClientData clientData, Tcl_Interp *interp,
-	      Tk_Window unused, char *value, char *widgRec, int offset)
+	Tk_Window unused, CONST84 char *value, char *widgRec, int offset)
 {
   Cmd_Struct *p = (Cmd_Struct *)clientData;
   int mode = Cmd_GetValue(p,value);
