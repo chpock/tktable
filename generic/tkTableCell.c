@@ -1161,7 +1161,7 @@ Table_SpanSet(register Table *tablePtr, int urow, int ucol, int rs, int cs)
 	for (j = ucol; j <= ucol+cs; j++) {
 	    TableMakeArrayIndex(i, j, buf);
 	    entryPtr = Tcl_CreateHashEntry(tablePtr->spanAffTbl, buf, &new);
-	    if (!(i == row && j == col)) {
+	    if (!(i == urow && j == ucol)) {
 		Tcl_SetHashValue(entryPtr, (char *) dbuf);
 	    }
 	}
