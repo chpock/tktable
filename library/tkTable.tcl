@@ -656,8 +656,7 @@ proc ::tk::table::DataExtend {w el} {
 proc ::tk::table::SelectAll {w} {
     if {[regexp {^(single|browse)$} [$w cget -selectmode]]} {
 	$w selection clear all
-	$w selection set active
-	::tk::table::HandleType $w [$w index active]
+	catch {$w selection set active}
     } elseif {[$w cget -selecttitles]} {
 	$w selection set [$w cget -roworigin],[$w cget -colorigin] end
     } else {
