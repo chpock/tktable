@@ -227,6 +227,7 @@ typedef struct {
     int		multiline;	/* wrapping style of multiline text */
     int		wrap;		/* wrapping style of multiline text */
     int		showtext;	/* whether to display text over image */
+    char *	ellipsis;	/* ellipsis to display on clipped text */
 } TableTag;
 
 /*  The widget structure for the table Widget */
