@@ -107,8 +107,8 @@ bind Table <Shift-Up>		{::tk::table::ExtendSelect %W -1  0}
 bind Table <Shift-Down>		{::tk::table::ExtendSelect %W  1  0}
 bind Table <Shift-Left>		{::tk::table::ExtendSelect %W  0 -1}
 bind Table <Shift-Right>	{::tk::table::ExtendSelect %W  0  1}
-bind Table <Prior>		{%W yview scroll -1 pages; %W activate @0,0}
-bind Table <Next>		{%W yview scroll  1 pages; %W activate @0,0}
+bind Table <Prior>		{%W yview scroll -1 pages; %W activate topleft}
+bind Table <Next>		{%W yview scroll  1 pages; %W activate topleft}
 bind Table <Control-Prior>	{%W xview scroll -1 pages}
 bind Table <Control-Next>	{%W xview scroll  1 pages}
 bind Table <Home>		{%W see origin}
