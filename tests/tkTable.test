@@ -354,6 +354,10 @@ test table-25.1 {TableWidgetCmd procedure, "tag" option} {
     list [catch {.t tag} msg] $msg
 } {1 {wrong # args: should be ".t tag option ?arg arg ...?"}}
 
+test table-25.2.1 {TableWidgetCmd procedure, "tag names" option} {
+    .t tag names
+} {flash active sel title}
+
 test table-26.1 {TableWidgetCmd procedure, "validate" option} {
     list [catch {.t validate} msg] $msg
 } {1 {wrong # args: should be ".t validate index"}}
