@@ -1041,7 +1041,7 @@ TableConfigure(interp, tablePtr, objc, objv, flags, forceUpdate)
     /* Do the configuration */
     argv = StringifyObjects(objc, objv);
     result = Tk_ConfigureWidget(interp, tablePtr->tkwin, tableSpecs,
-	    objc, argv, (char *) tablePtr, flags);
+	    objc, (CONST84 char **) argv, (char *) tablePtr, flags);
     ckfree((char *) argv);
     if (result != TCL_OK) {
 	return TCL_ERROR;
