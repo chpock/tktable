@@ -317,8 +317,10 @@ $($(PACKAGE)_LIB_FILE): $($(PACKAGE)_OBJECTS)
 
 VPATH = $(srcdir)/generic:$(srcdir)/unix:$(srcdir)/win
 
+# I would prefer to use $< over $?, but FreeBSD's can't handle it, and
+# with only one prereq, $? is sufficient
 tkTable.tcl.h: $(srcdir)/library/tkTable.tcl
-	sed -e '/^\#/d' -e '/^$$/d' -e 's/\\/\\\\/g' -e 's/\"/\\"/g' -e 's/^/"/' -e 's/$$/\\n"/' < `@CYGPATH@ $<` > '$@' || { rm -f $@; exit 1; }
+	sed -e '/^\#/d' -e '/^$$/d' -e 's/\\/\\\\/g' -e 's/\"/\\"/g' -e 's/^/"/' -e 's/$$/\\n"/' < `@CYGPATH@ $?` > '$@' || { rm -f $@; exit 1; }
 
 .SUFFIXES: .c .$(OBJEXT)
 
