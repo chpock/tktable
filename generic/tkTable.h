@@ -17,6 +17,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <tk.h>
 #ifdef MAC_TCL
 # include <Xatom.h>
