@@ -241,9 +241,8 @@ html:
 		html=`basename $$p|sed -e 's/.[^.]*$$//'`.html; \
 		echo "Creating \"$$html\" from \"$$p\""; \
 		rm -f $$html; \
-		nroff -man $$p \
+		groff -Tascii -man $$p \
 		| rman -f HTML \
-		| sed -e :a -e '/-$$/N; s/-\n//; ta' \
 			> $$html; \
 	done
 
