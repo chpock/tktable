@@ -8,7 +8,7 @@
  * Based on Tk3 table widget written by Roland King
  *
  * Updates 1996 by:
- * Jeffrey Hobbs	jeff.hobbs@acm.org
+ * Jeffrey Hobbs	jeff at hobbs org
  * John Ellson		ellson@lucent.com
  * Peter Bruecker	peter@bj-ig.de
  * Tom Moore		tmoore@spatial.ca

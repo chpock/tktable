@@ -1,6 +1,6 @@
 # table.tcl --
 #
-# Version align with tkTable 2.7, jeff.hobbs@acm.org
+# Version align with tkTable 2.7, jeff at hobbs org
 # This file defines the default bindings for Tk table widgets
 # and provides procedures that help in implementing those bindings.
 #
