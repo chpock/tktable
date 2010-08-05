@@ -108,7 +108,7 @@
 #define MIN(A,B)	(((A)>(B))?(B):(A))
 #define BETWEEN(val,min,max)	( ((val)<(min)) ? (min) : \
 				( ((val)>(max)) ? (max) : (val) ) )
-#define CONSTRAIN(val,min,max)	if ((val) < (min)) { (val) = (min); } \
+#define CONSTRAIN(val,min,max)	if ((val) < (min)) { (val) = MIN(min,max); } \
 				else if ((val) > (max)) { (val) = (max); }
 #define STREQ(s1, s2)	(strcmp((s1), (s2)) == 0)
 #define ARSIZE(A)	(sizeof(A)/sizeof(*A))
