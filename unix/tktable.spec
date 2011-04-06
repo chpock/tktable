@@ -1,7 +1,7 @@
 # RPM specfile provided by Jean-Luc Fontaine
 # $Id$
 
-%define	version	2.10
+%define	version	2.11
 %define	directory /usr
 
 Summary: table/matrix widget extension to Tcl/Tk.
