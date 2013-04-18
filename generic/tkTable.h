@@ -69,13 +69,6 @@
 #   endif
 #endif
 
-#if defined(WIN32) || defined(MAC_TCL) || defined(MAC_OSX_TK)
-/* XSync call defined in the internals for some reason */
-#   ifndef XSync
-#	define XSync(display, bool) {display->request++;}
-#   endif
-#endif /* defn of XSync */
-
 #ifndef NORMAL_BG
 #   ifdef WIN32
 #	define NORMAL_BG	"SystemButtonFace"
