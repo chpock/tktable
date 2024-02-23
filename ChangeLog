@@ -1,5 +1,9 @@
 2024-02-23 Konstantin Kushnir <chpock@gmail.com>
 
+	* Update TEA to 3.13
+
+2024-02-23 Konstantin Kushnir <chpock@gmail.com>
+
 	* Merge patches from:
 	  - https://github.com/wjoye/tktable
 	  - https://salsa.debian.org/tcltk-team/tk-table/-/commit/ec64f587f6410a70a0ddcbb7c44129ab0cc665d9
