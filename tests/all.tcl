@@ -9,11 +9,13 @@
 #
 # See the file "license.txt" for information on usage and redistribution
 # of this file, and for a DISCLAIMER OF ALL WARRANTIES.
-# 
+#
 # RCS: @(#) $Id$
 
 package require tcltest
 namespace import -force ::tcltest::*
+
+catch { package require Tk }
 
 set ::tcltest::testSingleFile false
 set ::tcltest::testsDirectory [file dir [info script]]

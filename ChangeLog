@@ -5,6 +5,7 @@
 	  - https://salsa.debian.org/tcltk-team/tk-table/-/commit/ec64f587f6410a70a0ddcbb7c44129ab0cc665d9
 	* Update TEA to 3.13
 	* Fix incompatible-pointer-types compiler warning
+	* Load Tk package before running the tests
 
 2024-02-23 Konstantin Kushnir <chpock@gmail.com>
 
