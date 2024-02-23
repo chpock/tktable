@@ -1,3 +1,13 @@
+2024-02-23 Konstantin Kushnir <chpock@gmail.com>
+
+	* Merge patches from:
+	  - https://github.com/wjoye/tktable
+	  - https://salsa.debian.org/tcltk-team/tk-table/-/commit/ec64f587f6410a70a0ddcbb7c44129ab0cc665d9
+
+2024-02-23 Konstantin Kushnir <chpock@gmail.com>
+
+	**** 2.11 TAGGED FOR RELEASE ****
+
 2013-04-18  Jeff Hobbs  <jeffh@ActiveState.com>
 
 	* generic/tkTable.c (TableValidateChange): don't call XSync on
@@ -63,7 +73,7 @@
 
 	* generic/tkTable.c:     Use safe Tcl_SetObjResult instead of trying
 	* generic/tkTableCell.c: to set existing objResult value.
-	* generic/tkTableCmds.c: 
+	* generic/tkTableCmds.c:
 
 2006-07-10  Jeff Hobbs  <jeffh@ActiveState.com>
 
@@ -127,7 +137,7 @@
 
 	* generic/tkTable.h: add #include <ctype.h>
 
-	* generic/tkTableCell.c (TableGetCellValue, TableSetCellValue): 
+	* generic/tkTableCell.c (TableGetCellValue, TableSetCellValue):
 	Do faster cache checks when DATA_CACHE is the only data source.
 	In fallback from command that errors to array var, retrieve array
 	value immediately on current get|set request.
@@ -160,7 +170,7 @@
 2004-02-13  Jeff Hobbs  <jeffh@ActiveState.com>
 
 	* library/tkTable.tcl (::tk::table::Button1): account for what
-	resizeborders are set when selecting cell [Bug 876320] (ferenc) 
+	resizeborders are set when selecting cell [Bug 876320] (ferenc)
 	(<Prior> <Next>): activate topleft, not @0,0 (accounts for title
 	rows) [Bug 879347] (ferenc)
 
@@ -228,7 +238,7 @@
 	* tests/tkTable.test:   takes a char string (ie: "...") to display
 	* generic/tkTableTag.c: as an ellipsis.  These will only be shown
 	* generic/tkTable.h:    on non-wrapping, non-multiline cells.
-	* generic/tkTable.c: 
+	* generic/tkTable.c:
 
 2002-12-10  Jeff Hobbs  <jeffh@ActiveState.com>
 
@@ -259,7 +269,7 @@
 	Allowing setting of tag relief to "". [Bug #233619]
 
 	* generic/tkTable.h:
-	* generic/tkTableUtil.c: 
+	* generic/tkTableUtil.c:
 	* generic/tkTableWin.c: more CONST84 casting fixes.
 
 	* library/tkTable.tcl: Add <FocusOut> as a default auto-commit
@@ -300,7 +310,7 @@
 
 2002-09-25  Jeff Hobbs  <jeffh@ActiveState.com>
 
-	* generic/tkTable.c: 
+	* generic/tkTable.c:
 	* generic/tkTable.h: added support for building on OS X (steffen)
 
 2002-06-21  Jeff Hobbs  <jeffh@ActiveState.com>
@@ -330,7 +340,7 @@
 	Added default shell and gdb targets.
 
 	* tclconfig/tcl.m4:
-	* configure: 
+	* configure:
 	* configure.in: updated to new TEA base that: prefixes all macros
 	with TEA_* instead of SC_*; adds TEA_PREFIX, which defaults the
 	prefix and exec_prefix values to what Tcl used; adds
@@ -1467,12 +1477,12 @@ interpreter.
 Integrated Bruecker's (peter@bj-ig.de) changes to 0.63:
   - Moved IMP-Code to one place, needs testing.
   - Some changes to TableCreate and TableDestroy:
-      Hashtables ever needed are created in Create 
+      Hashtables ever needed are created in Create
       so no tests in configure and later needed.
   - Removed GcCache (will be placed in TableDisplay)
   - Repaired Focus-Code little bug remains in the right
     and bottom of HL-Frame.
-  
+
 Updated README to reflect file name changes.
 
 Changed tkAppInit.c to reflect tk4.2 appinit.
@@ -1553,12 +1563,12 @@ form "{x y}"
 
 Add back support for zero width columns and zero height rows.
 
-Added installation of tkTable.tcl in 
+Added installation of tkTable.tcl in
    [lindex $tcl_pkgPath 0]/Tktable/tkTable.tcl
 (0.61 was using the built-in copy of tkTable.tcl so the lack of
 installation wasn't noticed.   Perhaps we don't need the built-in
-version???)  I put the runtime script in this directory to make it 
-trivial to generate binary distributions of the widget consisting of 
+version???)  I put the runtime script in this directory to make it
+trivial to generate binary distributions of the widget consisting of
 a single Tktable directory that is just dropped into lib/.
 
 Added a make target for tablewish (not normally needed with dynamic loading
@@ -1620,43 +1630,43 @@ Changed the dynamic load path for tkTable.tcl from
 
 **** v0.60 Dec 10 96 **** (all changes jhobbs)
 OPTIONS:
- 
+
 Altered man pages to properly reflect what options are handled (there
 were numerous extra, plus many missing).
- 
+
 changed -procrowtag => -rowtagcommand
 changed -proccoltag => -coltagcommand
- 
+
 Added -bd synonym
- 
+
 Fixed all internal coding for readability, concise representation
- 
+
 changed -cursorbg => -insertbackground
- 
+
 METHODS:
 
 Fixed lack of break in CMD_*STRETCH
- 
+
 removed whatcell:  code change:
         .table whatcell x y     => .table index @x,y
- 
+
 removed whereis, changed to bbox:  code change:
         .table whereis row col  => .table bbox <index>
 This needs to be improved to take multiple indices.
- 
+
 removed toprow && leftcol, added boundary:  code change:
         .table leftcol|toprow|bottomrow|rightcol ?rowOrCol?
         =>
         .table boundary left|right|top|bottom ?rowOrCol?
 rowOrCol can only be specified for top|left, as appropriate (though
 a bug in the code didn't check properly).
- 
+
 removed [rc]index: code change:
         .table [rc]index <index>        => .table index <index> row|col
- 
+
 changed get so (1) it works and (2) it returns values more like the
 listbox command
- 
+
 removed setcell.  This has been subsumed by the improved selection method.
 code likeness:
         .table setcell          => .table index select
@@ -1664,11 +1674,11 @@ code likeness:
         .table setcell 4 2      => .table selection set 4,2
 The "index select" is there for 100% compatibility, but curselection is
 what should be used to properly represent all selected cells.
- 
+
 MISC:
- 
+
 fixed parse_command to handle full non-ambiguous method names
- 
+
 updated man pages to include all methods/options in Tk4 style.
 
 reordered a lot of code to be in "alphabetical" order.
@@ -1678,7 +1688,7 @@ reordered a lot of code to be in "alphabetical" order.
 	- added support for Japanization patch
 	- added multi-node select support
 	- removed -underline option for tags
-   - included default bindings in loadable library	
+   - included default bindings in loadable library
 
 **** v0.5 Oct 96 ****
    - merged changes from Peter Brueckner <peter@peter.bj-ig.de>
@@ -1718,7 +1728,7 @@ Upgraded to tk4.0 (Paul Friberg)
 
 version 0.1 --> version 0.2
 ---------------------------
-Changed the tag code to apply the effects of multiple tags to a cell. 
+Changed the tag code to apply the effects of multiple tags to a cell.
 
 Fixed a bug with the flash code which forgot to delete the flash when
 a table was deleted
