@@ -7,6 +7,7 @@
 	* Fix incompatible-pointer-types compiler warning
 	* Load Tk package before running the tests
 	* Fix tests for Tcl/Tk v8.5.15+
+	* Don't use the target install-bin-binaries in Makefile
 
 2024-02-23 Konstantin Kushnir <chpock@gmail.com>
 
