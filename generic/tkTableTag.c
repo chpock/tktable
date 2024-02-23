@@ -1,4 +1,4 @@
-/* 
+/*
  * tkTableTag.c --
  *
  *	This module implements tags for table widgets.
@@ -22,7 +22,7 @@ static void	TableImageProc _ANSI_ARGS_((ClientData clientData, int x,
 static int	TableOptionReliefSet _ANSI_ARGS_((ClientData clientData,
 			Tcl_Interp *interp, Tk_Window tkwin,
 			CONST84 char *value, char *widgRec, int offset));
-static char *	TableOptionReliefGet _ANSI_ARGS_((ClientData clientData,
+static const char *	TableOptionReliefGet _ANSI_ARGS_((ClientData clientData,
 			Tk_Window tkwin, char *widgRec, int offset,
 			Tcl_FreeProc **freeProcPtr));
 
@@ -102,7 +102,7 @@ typedef struct {
     unsigned int pstate, pjustify, pmultiline, pwrap, pshowtext, pellipsis;
 } TableJoinTag;
 
-/* 
+/*
  *----------------------------------------------------------------------
  *
  * TableImageProc --
@@ -611,7 +611,7 @@ FindRowColTag(Table *tablePtr, int cell, int mode)
     return tagPtr;
 }
 
-/* 
+/*
  *----------------------------------------------------------------------
  *
  * TableCleanupTag --
@@ -987,7 +987,7 @@ Table_TagCmd(ClientData clientData, register Tcl_Interp *interp,
 	    tagPtr = TableTagGetEntry(tablePtr, Tcl_GetString(objv[3]),
 		    0, NULL);
 
-	    /* 
+	    /*
 	     * If there were less than 6 args, we return the configuration
 	     * (for all or just one option), even for new tags
 	     */
@@ -1150,7 +1150,7 @@ Table_TagCmd(ClientData clientData, register Tcl_Interp *interp,
 	    }
 	    /* create hash key */
 	    TableMakeArrayIndex(row, col, buf);
-    
+
 	    if (STREQ(tagname, "active")) {
 		result = (tablePtr->activeRow+tablePtr->rowOffset==row &&
 			tablePtr->activeCol+tablePtr->colOffset==col);
@@ -1340,7 +1340,7 @@ TableOptionReliefSet(clientData, interp, tkwin, value, widgRec, offset)
  *----------------------------------------------------------------------
  */
 
-static char *
+static const char *
 TableOptionReliefGet(clientData, tkwin, widgRec, offset, freeProcPtr)
     ClientData clientData;		/* Type of struct being set. */
     Tk_Window tkwin;			/* Window containing canvas widget. */

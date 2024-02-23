@@ -1,4 +1,4 @@
-/* 
+/*
  * tkTable.h --
  *
  *	This is the header file for the module that implements
@@ -519,7 +519,7 @@ extern void	Table_ClearHashTable(Tcl_HashTable *hashTblPtr);
 extern int	TableOptionBdSet(ClientData clientData,
 			Tcl_Interp *interp, Tk_Window tkwin,
 			CONST84 char *value, char *widgRec, int offset);
-extern char *	TableOptionBdGet(ClientData clientData,
+extern const char *	TableOptionBdGet(ClientData clientData,
 			Tk_Window tkwin, char *widgRec, int offset,
 			Tcl_FreeProc **freeProcPtr);
 extern int	TableTagConfigureBd(Table *tablePtr,
@@ -528,7 +528,7 @@ extern int	Cmd_OptionSet(ClientData clientData,
 			Tcl_Interp *interp,
 			Tk_Window unused, CONST84 char *value,
 			char *widgRec, int offset);
-extern char *	Cmd_OptionGet(ClientData clientData,
+extern const char *	Cmd_OptionGet(ClientData clientData,
 			Tk_Window unused, char *widgRec,
 			int offset, Tcl_FreeProc **freeProcPtr);
 
